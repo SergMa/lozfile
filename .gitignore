@@ -1,0 +1,6 @@
+test
+lzf
+*.o
+*.lz
+*.pnps
+data.txt
