@@ -1933,17 +1933,17 @@ void loz_flush( lozfile_t * lozfile )
 //------------------------------------------------------------------------------
 //Get current valid size of LOZ-file.
 //inputs:   lozfile = pointer to loz-file
-void loz_filesize( lozfile_t * lozfile )
+//returns:  current size of LOZ-file
+//          0 = error
+long int loz_filesize( lozfile_t * lozfile )
 {
-        int err;
-        
         MYLOG_TRACE("@(lozfile=%p)", lozfile);
 
         //check input arguments
         if(lozfile==NULL)
-                return;
+                return 0L;
         if(lozfile->fd==NULL)
-                return;
+                return 0L;
         
         return lozfile->filesize;
 }
